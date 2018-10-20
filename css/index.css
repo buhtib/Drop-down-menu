@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.hide_box{
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color:rgba(0,0,0,0.5);
+    text-align: center;
+    line-height: 100vh;
+    z-index: 100;
+}
+.hide_box h3{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    font-size: 30px;
+    background-color: #fff;
+    text-align: center;
+    line-height: 100px;
+}
+
+/* 两个以上  隐藏显示的块 */
+.hide_two{
+    /* display: none; */
+    cursor: pointer;
+    width: 300px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    color: #868686;
+}
+.hide_two>p{
+    display: inline-block;
+    position: relative;
+    margin-left: -20px;
+}
+.hide_two i{
+    position: absolute;
+    right: -20px;
+    top: 0;
+    font-size: 12px!important;
+    color: #868686;
+}
+
+
+/* 大盒子 */
+.box_out{
+    width: 300px;
+    height: auto;
+    margin: 30px auto;
+    border: 10px solid #999999;
+    /* overflow: visible; */
+}
+.box{
+    width: 300px;
+    height: auto;
+    overflow: visible;
+}
+.box.hide {
+    height: 130px;
+    overflow: hidden;
+}
+
+
+/* 大盒子里的每个一级标签 */
+.box>ul .drop_out{
+    /* height: 41px;     */
+    /* overflow: hidden;    */
+}
+.box>ul .drop_out.change{
+      /* height: 41px;     
+      overflow: hidden;     */
+}
+.box>ul .drop_fir{
+    cursor: pointer;
+    width: 280px;
+    border-bottom: 1px solid #F4F4F4;
+    height: 40px;
+    display: flex;
+    padding: 0 10px;
+    justify-content: space-between;
+    align-items: center;
+    /* position: relative; */
+} 
+em>i{
+    color: #D0D0D0;
+}
+
+
+/* 二级标签 */
+.drop_out>.drop_seconds{
+    display: none;
+    width: 300px;
+    background-color: #F5F5F5;
+}
+.drop_seconds>ul>li{
+    width: 280px;
+    padding: 0 10px;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}   
+/* 二级菜单左边的块 */
+.drop_seconds .seconds_left {
+    width: 120px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content:flex-start ;
+
+}
+.drop_seconds .seconds_left .biaoqian{
+    display: flex;
+    justify-content: space-around;
+    width: 100px;
+}   
+/* 标签小图标 */
+.seconds_left .biaoqian>span{
+    position: relative;   
+}
+.seconds_left .biaoqian>span>i{
+    position: absolute;
+    left: -16px;
+    top: 3px;
+    font-size: 12px;
+    color: #61C1CD;
+}
+/* 按钮 */
+.drop_seconds>ul>li>button{
+    display: inline-block;
+    cursor: pointer;
+    background-color: #FF9800;
+    color: white;
+    outline: none;
+    width:80px;
+    border-radius: 4px;
+    height: 30px;
+    text-align: center;
+    line-height: 20px;
+    border: 0px;
+    font-size: 14px;
+}
