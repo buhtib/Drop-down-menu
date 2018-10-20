@@ -8,7 +8,9 @@ var xiala = (function () {
             // 二级菜单集合
             this.$hide_dropAll = $('.drop_seconds');
           
-           
+           $.fn.extend({
+
+           })
             this.getData()
             this.hide_moreTwo()
             this.event()
@@ -34,7 +36,7 @@ var xiala = (function () {
             this.$hide_dropAll.on('click','button',function() {
                 // 弹窗显示，并渲染值
                 $('.hide_box').show()
-                $('.hide_box h3').html($(this).parents('.drop_out').index()-1 + ' - '+ $(this).parent().index())
+                $('.hide_box h3').html($(this).parents('.drop_out').index() - 1 + ' - '+ $(this).parent().index())
             })
             
             // 弹窗的点击事件
@@ -45,9 +47,8 @@ var xiala = (function () {
             // 外部隐藏块按钮显示
             $('.box_out_hide').click(function() {
                 $(this).hide()
-                for(var j = 0; j < $('.box>ul').children().length; j++) {
-                    $('.box>ul').children().eq(j).show()
-                }
+                // 将所有块显示
+                $('.box>ul').children().show()
             })
 
             // 内部隐藏块按钮显示
@@ -98,22 +99,18 @@ var xiala = (function () {
         hide_moreTwo:function() {
             var _this = this;
             if($('.box>ul').children().length > 3) {
-                for(var j = 3; j < $('.box>ul').children().length; j++) {
-                    $('.box>ul').children().eq(j).hide()
-                }
-                // $('.box').addClass('hide')
+                // 将多余块隐藏
+                $('.box>ul').children().eq(2).nextAll().hide()
                 // 显示隐藏的块
                 $('.box_out_hide').show()
             }
 
             // 循环每个隐藏块  找到下面列表的个数  大于2就隐藏超出
             for(var i = 0; i < $('.box>ul').children().length - 1; i++) {
-                console.log($('.drop_seconds').eq(i).find('ul').children().length )
                 if($('.drop_seconds').eq(i).find('ul').children().length > 2) {
                     $('.drop_seconds').eq(i).find('ul').addClass('change')
                     // 显示隐藏的块
                     $('.drop_seconds').eq(i).find('.box_in_hide').show()
-
                 }
                     
             }
