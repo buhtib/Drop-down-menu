@@ -3,6 +3,7 @@
     padding: 0;
     list-style: none;
 }
+/* 弹出窗 */
 .hide_box{
     display: none;
     position: fixed;
@@ -27,7 +28,7 @@
 
 /* 两个以上  隐藏显示的块 */
 .hide_two{
-    /* display: none; */
+    display: none;
     cursor: pointer;
     width: 300px;
     height: 40px;
@@ -55,28 +56,16 @@
     height: auto;
     margin: 30px auto;
     border: 10px solid #999999;
-    /* overflow: visible; */
 }
 .box{
     width: 300px;
     height: auto;
     overflow: visible;
 }
-.box.hide {
-    height: 130px;
-    overflow: hidden;
-}
+
 
 
 /* 大盒子里的每个一级标签 */
-.box>ul .drop_out{
-    /* height: 41px;     */
-    /* overflow: hidden;    */
-}
-.box>ul .drop_out.change{
-      /* height: 41px;     
-      overflow: hidden;     */
-}
 .box>ul .drop_fir{
     cursor: pointer;
     width: 280px;
@@ -86,7 +75,6 @@
     padding: 0 10px;
     justify-content: space-between;
     align-items: center;
-    /* position: relative; */
 } 
 em>i{
     color: #D0D0D0;
@@ -99,6 +87,15 @@ em>i{
     width: 300px;
     background-color: #F5F5F5;
 }
+.drop_seconds>ul{
+    height: auto;
+    overflow: visible;
+}
+.drop_seconds>ul.change{
+    height:142px;
+    overflow: hidden;
+}
+
 .drop_seconds>ul>li{
     width: 280px;
     padding: 0 10px;

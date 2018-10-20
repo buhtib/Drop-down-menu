@@ -42,12 +42,20 @@ var xiala = (function () {
                 $(this).hide()
             })
 
-            // 隐藏块按钮显示
-            $('.hide_two').click(function() {
+            // 外部隐藏块按钮显示
+            $('.box_out_hide').click(function() {
                 $(this).hide()
-                $('.box').removeClass('hide')
-
+                for(var j = 0; j < $('.box>ul').children().length; j++) {
+                    $('.box>ul').children().eq(j).show()
+                }
             })
+
+            // 内部隐藏块按钮显示
+            $('.box_in_hide').click(function() {
+                $(this).hide()
+                $(this).prev().removeClass('change')
+            })
+
 
         },
 
@@ -87,11 +95,27 @@ var xiala = (function () {
         },
 
         // 多出两个  就隐藏的功能
-        hide_moreTwo:function(ele) {
+        hide_moreTwo:function() {
             var _this = this;
             if($('.box>ul').children().length > 3) {
-                $('.box').addClass('hide')
-                $('.hide_two').show()
+                for(var j = 3; j < $('.box>ul').children().length; j++) {
+                    $('.box>ul').children().eq(j).hide()
+                }
+                // $('.box').addClass('hide')
+                // 显示隐藏的块
+                $('.box_out_hide').show()
+            }
+
+            // 循环每个隐藏块  找到下面列表的个数  大于2就隐藏超出
+            for(var i = 0; i < $('.box>ul').children().length - 1; i++) {
+                console.log($('.drop_seconds').eq(i).find('ul').children().length )
+                if($('.drop_seconds').eq(i).find('ul').children().length > 2) {
+                    $('.drop_seconds').eq(i).find('ul').addClass('change')
+                    // 显示隐藏的块
+                    $('.drop_seconds').eq(i).find('.box_in_hide').show()
+
+                }
+                    
             }
         }
     }
